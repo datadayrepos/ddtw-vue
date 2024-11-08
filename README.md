@@ -4,7 +4,8 @@
 
 ---
 
-Vue TW UI components built on the flow byte library with customizations for external dependencies and some simplifications.
+## Vue TW UI components built on the flow byte library with customizations for external dependencies and some simplifications.
+Use the original unless aspecial need for this.
 
 ### `@datadayrepos/ddtw-vue` is an open source collection of UI components, built in Vue, with utility classes from Tailwind CSS that you can use as a starting point for user interfaces and websites.
 
