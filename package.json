@@ -1,7 +1,7 @@
 {
   "name": "@datadayrepos/ddtw-vue",
   "type": "module",
-  "version": "0.1.6-beta.16",
+  "version": "0.1.6-beta.17",
   "packageManager": "pnpm@8.9.0",
   "author": "datadayrepos",
   "license": "MIT",
@@ -45,9 +45,9 @@
     "cert": "rm -rf .cert && mkdir -p .cert && mkcert -key-file ./.cert/key.pem -cert-file ./.cert/cert.pem 'localhost'"
   },
   "peerDependencies": {
-    "@datadayrepos/icons": "0.0.1-beta.29",
+    "@datadayrepos/icons": "0.0.1-beta.338",
     "tailwindcss": "^3",
-    "vue": "^3.4.x"
+    "vue": "3.5.13"
   },
   "dependencies": {
     "@vueuse/core": "10.10.0",
@@ -57,21 +57,21 @@
     "lodash-es": "4.17.21",
     "nanoid": "5.0.7",
     "tailwind-merge": "2.3.0",
-    "tailwindcss": "3.3.3"
+    "tailwindcss": "3.4.13"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "2.26.0",
+    "@antfu/eslint-config": "3.12.1",
     "@datadayrepos/ni": "0.21.8",
     "@types/lodash-es": "4.17.12",
-    "@types/node": "20.12.12",
+    "@types/node": "22.5.1",
     "@typescript-eslint/eslint-plugin": "8.3.0",
     "@typescript-eslint/parser": "8.3.0",
     "@vitejs/plugin-vue": "5.0.4",
     "@vitest/coverage-v8": "1.6.0",
-    "@vue/eslint-config-typescript": "13.0.0",
+    "@vue/eslint-config-typescript": "14.0.0",
     "@vue/test-utils": "2.4.6",
     "@vue/tsconfig": "0.5.1",
-    "eslint": "8.57.0",
+    "eslint": "9.10.0",
     "eslint-plugin-sort-keys": "2.3.5",
     "jsdom": "24.1.0",
     "postcss": "8.4.38",
