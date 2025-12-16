@@ -1,4 +1,6 @@
+// docs/.vitepress/config.mts
 import fs from 'node:fs'
+import { resolve } from 'node:path'
 import { defineConfig } from 'vitepress'
 
 function buildSidebar() {
@@ -130,6 +132,14 @@ export default defineConfig({
   },
   // Vite-specific configuration
   vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^@datadayrepos\/ddtw-vue$/,
+          replacement: resolve(__dirname, '../../src/index.ts'),
+        },
+      ],
+    },
     server: {
       port: Number.parseInt('5172', 10) || 3000, // Use the environment variable or default to 3000
       host: '0.0.0.0',

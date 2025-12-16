@@ -1,6 +1,6 @@
-import { type Ref, computed, nextTick, ref, watch } from 'vue'
-import classNames from 'classnames'
 import type { DropdownAlignment, DropdownPlacement } from '../types'
+import classNames from 'classnames'
+import { computed, nextTick, onBeforeUnmount, onMounted, type Ref, ref, watch } from 'vue'
 
 const defaultDropdownClasses = 'absolute z-10 bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700'
 
@@ -39,11 +39,6 @@ export function useDropdownClasses(props: UseDropdownClassesProps): {
   contentClasses: Ref<string>
   contentStyles: Ref<string>
 } {
-  watch(props.visible, (value: boolean) => {
-    if (value)
-      nextTick(() => calculatePlacementClasses())
-  })
-
   const placementStyles = ref('')
 
   const calculatePlacementClasses = () => {
@@ -55,15 +50,42 @@ export function useDropdownClasses(props: UseDropdownClassesProps): {
     placementStyles.value = placementCalculators[props.placement.value](boundingRect)
   }
 
+  watch(props.visible, (value: boolean) => {
+    if (value)
+      nextTick(() => calculatePlacementClasses())
+  })
+
+  let observer: MutationObserver | undefined
+
   // Watch for changes in the content element, and recalculate placement classes
   // to ensure the dropdown is always positioned correctly
-  const observer = new MutationObserver(() => {
-    calculatePlacementClasses()
+  // Only initialize MutationObserver when mounted (Browser only)
+  onMounted(() => {
+    observer = new MutationObserver(() => {
+      calculatePlacementClasses()
+    })
+
+    // If the element is already there on mount, start observing
+    if (props.contentRef.value) {
+      observer.observe(props.contentRef.value, {
+        childList: true,
+        subtree: true,
+      })
+    }
+  })
+
+  // Clean up memory when component is destroyed
+  onBeforeUnmount(() => {
+    observer?.disconnect()
   })
 
   watch(
     props.contentRef,
     (value) => {
+      // Add safety check. If observer isn't ready (SSR), stop here.
+      if (!observer)
+        return
+
       if (value) {
         observer.observe(value, {
           childList: true,

@@ -1,4 +1,9 @@
+/* eslint-disable perfectionist/sort-exports */
 // src/index.ts
+
+// expose the type TableRowType
+export type { TableRowType } from './components/DdtwTable/types'
+
 export { default as DdtwAccordion } from './components/DdtwAccordion/DdtwAccordion.vue'
 export { default as DdtwAccordionContent } from './components/DdtwAccordion/DdtwAccordionContent.vue'
 export { default as DdtwAccordionHeader } from './components/DdtwAccordion/DdtwAccordionHeader.vue'

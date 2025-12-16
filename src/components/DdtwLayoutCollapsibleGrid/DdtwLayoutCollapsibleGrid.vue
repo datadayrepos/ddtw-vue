@@ -30,7 +30,7 @@
 // Wrapper of two buttons
 // Can also passed into table slots as one component
 import { EditIcon, TrashIcon } from '@datadayrepos/icons'
-import { DdtwButton } from '@datadayrepos/ddtw-vue'
+import DdtwButton from '../DdtwButton/DdtwButton.vue'
 
 const props = defineProps({
   buttonDelete: {

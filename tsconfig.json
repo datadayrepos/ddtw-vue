@@ -20,8 +20,11 @@
     "checkJs": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "declaration": true,
+    "declarationMap": true,
     "noEmit": false,
-    "outDir": "dist"
+    "outDir": "dist",
+    "isolatedModules": true
   },
   "include": [
     "src/**/*.ts",

@@ -1,24 +1,20 @@
 {
   "name": "@datadayrepos/ddtw-vue",
   "type": "module",
-  "version": "0.1.6-beta.17",
+  "version": "0.1.8",
   "packageManager": "pnpm@8.9.0",
   "author": "datadayrepos",
   "license": "MIT",
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/ddtw-vue.mjs",
-      "require": "./dist/ddtw-vue.umd.js"
+      "import": "./dist/index.mjs"
     },
-    "./dist/style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
-    },
-    "./*": "./dist/*"
+    "./dist/style.css": "./dist/style.css"
   },
-  "main": "./dist/ddtw-vue.umd.js",
-  "module": "./dist/ddtw-vue.mjs",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
@@ -30,23 +26,30 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "start": "vitepress serve docs --port $PORT",
-    "build": "vitepress build docs && cp -r ./docs/assets/* ./docs/.vitepress/dist/assets/",
+
+    "// BUILD COMMANDS": "--------------------------------------------------",
+    "build": "npm run build:package && npm run build:types",
+    "build:docs": "vitepress build docs && cp -r ./docs/assets/* ./docs/.vitepress/dist/assets/",
+
+    "// HELPERS": "---------------------------------------------------------",
     "build:package": "vite build",
     "build:types": "vue-tsc --declaration --emitDeclarationOnly && tsc-alias -p tsconfig.json",
-    "build:production": "npm run build:package && npm run build:types",
+    "// QUALITY & RELEASE": "-----------------------------------------------",
     "lint": "eslint . --ignore-pattern .gitignore",
     "lint-fix": "eslint . --fix --ignore-pattern .gitignore",
     "clear": "rm -fr ./dist && rm -fr ./dist_types",
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "typecheck": "vue-tsc --noEmit",
-    "prepublishOnly": "npm run build:production",
+
+    "// PUBLISH": "---------------------------------------------------------",
+    "prepublishOnly": "npm run build",
     "pub": "npm publish --access public",
     "cert": "rm -rf .cert && mkdir -p .cert && mkcert -key-file ./.cert/key.pem -cert-file ./.cert/cert.pem 'localhost'"
   },
   "peerDependencies": {
     "@datadayrepos/icons": "0.0.1-beta.338",
-    "tailwindcss": "^3",
+    "tailwindcss": "3.4.13",
     "vue": "3.5.13"
   },
   "dependencies": {
@@ -56,8 +59,7 @@
     "flowbite": "2.3.0",
     "lodash-es": "4.17.21",
     "nanoid": "5.0.7",
-    "tailwind-merge": "2.3.0",
-    "tailwindcss": "3.4.13"
+    "tailwind-merge": "2.3.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "3.12.1",

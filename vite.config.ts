@@ -19,7 +19,7 @@ export default defineConfig({
           return 'ddtw-vue.umd.cjs' // Use .cjs for UMD (CommonJS)
         return `ddtw-vue.${format}.js` // Fallback for other formats if added
       },
-      formats: ['es', 'umd'], // Include both ES and UMD formats
+      formats: ['es'],
       name: 'ddtw-vue',
     },
     rollupOptions: {
@@ -27,11 +27,15 @@ export default defineConfig({
       // into your library
       external: ['vue'],
       output: {
+        entryFileNames: '[name].mjs',
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
           vue: 'Vue',
         },
+        // FIX: This is the magic setting. It keeps your folder structure in dist/
+        preserveModules: true,
+        preserveModulesRoot: 'src',
       },
     },
     target: 'esnext',
