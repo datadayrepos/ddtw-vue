@@ -94,3 +94,6 @@ docs/.vitepress/cache
 
 # Keep the docs/.vitepress folder
 !docs/.vitepress/
+
+# Verified npm archives, never commit.
+.npm-package/

@@ -26,11 +26,9 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "start": "vitepress serve docs --port $PORT",
-
     "// BUILD COMMANDS": "--------------------------------------------------",
     "build": "npm run build:package && npm run build:types",
     "build:docs": "vitepress build docs && cp -r ./docs/assets/* ./docs/.vitepress/dist/assets/",
-
     "// HELPERS": "---------------------------------------------------------",
     "build:package": "vite build",
     "build:types": "vue-tsc --declaration --emitDeclarationOnly && tsc-alias -p tsconfig.json",
@@ -41,11 +39,12 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "typecheck": "vue-tsc --noEmit",
-
     "// PUBLISH": "---------------------------------------------------------",
-    "prepublishOnly": "npm run build",
-    "pub": "npm publish --access public",
-    "cert": "rm -rf .cert && mkdir -p .cert && mkcert -key-file ./.cert/key.pem -cert-file ./.cert/cert.pem 'localhost'"
+    "prepublishOnly": "node scripts/npm-package.mjs guard",
+    "pub": "node scripts/npm-package.mjs publish --access=public",
+    "cert": "rm -rf .cert && mkdir -p .cert && mkcert -key-file ./.cert/key.pem -cert-file ./.cert/cert.pem 'localhost'",
+    "prepack": "node scripts/npm-package.mjs guard",
+    "pack:release": "node scripts/npm-package.mjs pack"
   },
   "peerDependencies": {
     "@datadayrepos/icons": "0.0.1-beta.338",
@@ -89,5 +88,4 @@
   "lint-staged": {
     "*": "eslint --fix"
   }
-
 }
