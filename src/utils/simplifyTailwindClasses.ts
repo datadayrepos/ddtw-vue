@@ -34,10 +34,14 @@ export function simplifyTailwindClasses(...classes: (string | string[])[]): stri
     const classes = types.map((type) => {
       if (newTypes.includes(type)) {
         const classIndex = currentTypes.indexOf(type)
-        if (classIndex >= 0) { return currentClasses[classIndex] || '' }
+        if (classIndex >= 0) {
+          return currentClasses[classIndex] || ''
+        }
       }
       const classIndex = acc.types.indexOf(type)
-      if (classIndex >= 0) { return acc.classes[classIndex] || '' }
+      if (classIndex >= 0) {
+        return acc.classes[classIndex] || ''
+      }
       return ''
     }).filter(_ => !!_)
 

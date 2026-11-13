@@ -53,10 +53,10 @@
 </template>
 
 <script lang="ts" setup>
-import { type Ref, onMounted, ref } from 'vue'
-import { CloseCrossIcon } from '@datadayrepos/icons'
-import { modalPositionClasses, modalSizeClasses } from './useClasses'
 import type { ModalProps } from './types'
+import { CloseCrossIcon } from '@datadayrepos/icons'
+import { onMounted, type Ref, ref } from 'vue'
+import { modalPositionClasses, modalSizeClasses } from './useClasses'
 
 const props = withDefaults(defineProps<ModalProps>(), {
   notEscapable: false,

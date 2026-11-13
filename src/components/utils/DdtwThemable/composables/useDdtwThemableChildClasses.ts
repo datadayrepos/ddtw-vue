@@ -1,7 +1,7 @@
-import { type Ref, computed } from 'vue'
-import type { ThemableChildrenApply } from '../types'
-import { useDdtwThemable } from './useDdtwThemable'
 import type { FlowbiteTheme } from '/@/components/utils/DdtwThemable/types'
+import type { ThemableChildrenApply } from '../types'
+import { computed, type Ref } from 'vue'
+import { useDdtwThemable } from './useDdtwThemable'
 
 type UseDdtwThemableChildReturns = {
   classes: Ref<string>

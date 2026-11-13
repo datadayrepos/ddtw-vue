@@ -59,9 +59,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, useAttrs } from 'vue'
-import { twMerge } from 'tailwind-merge'
 import type { AlertType } from './types'
+import { twMerge } from 'tailwind-merge'
+import { ref, useAttrs } from 'vue'
 
 type IAlertProps = {
   type?: AlertType
@@ -84,12 +84,10 @@ defineOptions({
 })
 
 defineSlots<{
-  /* eslint-disable @typescript-eslint/no-explicit-any */
   'default': any
   'close-icon': any
   'icon': any
   'title': any
-  /* eslint-enable @typescript-eslint/no-explicit-any */
 }>()
 const attrs = useAttrs()
 const alertTextClasses: Record<AlertType, string> = {

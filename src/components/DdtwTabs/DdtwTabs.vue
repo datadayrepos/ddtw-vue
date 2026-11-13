@@ -18,11 +18,11 @@
 </template>
 
 <script lang="ts" setup>
+import type { TabsVariant } from './types'
 import { computed, provide, toRef, useSlots } from 'vue'
 import { flatten } from '../../utils/flatten'
 import { useTabsClasses } from './composables/useTabsClasses'
 import DdtwTabPane from './DdtwTabPane.vue'
-import type { TabsVariant } from './types'
 import {
   TAB_ACTIVATE_INJECTION_KEY,
   TAB_ACTIVE_NAME_INJECTION_KEY,
@@ -58,8 +58,8 @@ const defaultSlot = slots.default
 const tabsChildren = computed(() => {
   return defaultSlot
     ? flatten(defaultSlot()).filter((v) => {
-      return (v.type as { __FLOWBITE_TAB__?: true }).__FLOWBITE_TAB__
-    })
+        return (v.type as { __FLOWBITE_TAB__?: true }).__FLOWBITE_TAB__
+      })
     : []
 })
 

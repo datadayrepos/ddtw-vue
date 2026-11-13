@@ -45,11 +45,11 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, toRefs } from 'vue'
+import type { CommonAutoFill, InputSize } from './../DdtwInput/types'
 import { useVModel } from '@vueuse/core'
 import { twMerge } from 'tailwind-merge'
+import { computed, toRefs } from 'vue'
 import { useSelectClasses } from './composables/useSelectClasses'
-import type { CommonAutoFill, InputSize } from './../DdtwInput/types'
 import { type OptionsType, type ValidationStatus, validationStatusMap } from './types'
 
 type InputProps = {

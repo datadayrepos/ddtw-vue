@@ -1,6 +1,6 @@
-import { type Ref, computed } from 'vue'
-import classNames from 'classnames'
 import type { SpinnerColor, SpinnerSize } from '../types'
+import classNames from 'classnames'
+import { computed, type Ref } from 'vue'
 
 const sizes: Record<SpinnerSize, string> = {
   0: 'w-0 h-0',

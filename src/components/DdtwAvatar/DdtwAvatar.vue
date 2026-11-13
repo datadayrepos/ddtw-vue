@@ -45,8 +45,8 @@
 </template>
 
 <script lang="ts" setup>
-import { type PropType, computed, ref, toRefs, useSlots } from 'vue'
 import type { AvatarSize, AvatarStatus, AvatarStatusPosition } from './types'
+import { computed, type PropType, ref, toRefs, useSlots } from 'vue'
 import { useAvatarClasses } from '/@/components/DdtwAvatar/composables/useAvatarClasses'
 
 const props = defineProps({

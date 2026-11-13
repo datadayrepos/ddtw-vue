@@ -86,8 +86,8 @@
 </template>
 
 <script lang="ts" setup>
-import { type PropType, ref, toRefs } from 'vue'
 import type { ToastAlign, ToastType } from './types'
+import { type PropType, ref, toRefs } from 'vue'
 import { useToastClasses } from './composables/useToastClasses'
 import DdtwThemableChild from '/@/components/utils/DdtwThemable/DdtwThemableChild.vue'
 

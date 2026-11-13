@@ -25,9 +25,9 @@
 // General modal that creates an overlay with click utside, and ONE slot for all modal content
 // There is no color set here, this is only the background
 import type { Ref } from 'vue'
+import type { ModalProps } from './types'
 import { onMounted, ref } from 'vue'
 import { modalPositionClasses, modalSizeClasses } from './useClasses'
-import type { ModalProps } from './types'
 
 const props = withDefaults(defineProps<ModalProps>(), {
   notEscapable: false,

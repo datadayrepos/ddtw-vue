@@ -1,6 +1,6 @@
-import { type Ref, computed, useAttrs } from 'vue'
-import { twMerge } from 'tailwind-merge'
 import type { BadgeSize, BadgeType } from '../types'
+import { twMerge } from 'tailwind-merge'
+import { computed, type Ref, useAttrs } from 'vue'
 
 const defaultBadgeClasses = 'mr-2 px-2.5 py-0.5 rounded flex items-center justify-center'
 const badgeLinkClasses = 'bg-blue-100 hover:bg-blue-200 text-blue-800 dark:text-blue-800 dark:hover:bg-blue-300'

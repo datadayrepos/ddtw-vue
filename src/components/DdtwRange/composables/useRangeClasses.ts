@@ -1,6 +1,6 @@
-import { type Ref, computed } from 'vue'
-import { simplifyTailwindClasses } from '/@/utils/simplifyTailwindClasses'
 import type { InputSize } from '/@/components/DdtwInput/types'
+import { computed, type Ref } from 'vue'
+import { simplifyTailwindClasses } from '/@/utils/simplifyTailwindClasses'
 
 const rangeDefaultClasses = 'w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700'
 const rangeLabelClasses = 'block mb-2 text-sm font-medium text-gray-900 dark:text-white'

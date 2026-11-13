@@ -1,5 +1,5 @@
-import { type Ref, computed } from 'vue'
 import type { InputSize } from '/@/components/DdtwInput/types'
+import { computed, type Ref } from 'vue'
 
 // Toggle Background
 const defaultLabelClasses = 'w-fit relative inline-flex items-center cursor-pointer'

@@ -1,5 +1,5 @@
-import { onBeforeMount, onBeforeUnmount, reactive } from 'vue'
 import type { tState } from '../types'
+import { onBeforeMount, onBeforeUnmount, reactive } from 'vue'
 
 type AccordionProps = {
   alwaysOpen?: boolean

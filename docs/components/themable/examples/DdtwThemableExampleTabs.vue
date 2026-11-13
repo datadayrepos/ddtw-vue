@@ -71,10 +71,10 @@
 
 <script lang="ts" setup>
 import type { PropType } from 'vue'
-import { ref } from 'vue'
-import { DdtwRadio, DdtwTab, DdtwTabs, DdtwThemable } from '../../../../src/index'
 import type { TabsVariant } from '../../../../src/components/DdtwTabs/types'
 import type { FlowbiteTheme } from '../../../../src/components/utils/DdtwThemable/types'
+import { ref } from 'vue'
+import { DdtwRadio, DdtwTab, DdtwTabs, DdtwThemable } from '../../../../src/index'
 
 defineProps({
   tabsVariant: {

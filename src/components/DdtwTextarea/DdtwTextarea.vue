@@ -21,8 +21,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
 import type { CommonAutoFill } from './../DdtwInput/types'
+import { computed } from 'vue'
 import { useTextareaClasses } from './composables/useTextareaClasses'
 
 type TextareaProps = {

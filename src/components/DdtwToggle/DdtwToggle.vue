@@ -12,9 +12,9 @@
 </template>
 
 <script lang="ts" setup>
+import type { InputSize } from '/@/components/DdtwInput/types'
 import { computed, toRefs } from 'vue'
 import { useToggleClasses } from './composables/useToggleClasses'
-import type { InputSize } from '/@/components/DdtwInput/types'
 
 type ToggleProps = {
   color?: string

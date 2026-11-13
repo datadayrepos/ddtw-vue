@@ -1,6 +1,6 @@
-import { type Ref, computed } from 'vue'
-import classNames from 'classnames'
 import type { BreadcrumbType } from '../types'
+import classNames from 'classnames'
+import { computed, type Ref } from 'vue'
 
 const breadcrumbDefaultClasses = 'inline-flex items-center space-x-1 md:space-x-3'
 const breadcrumbWrapperVariantClasses: Record<BreadcrumbType, string> = {

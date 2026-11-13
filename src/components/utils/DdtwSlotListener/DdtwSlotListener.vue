@@ -1,7 +1,7 @@
 <script lang="ts">
-import { type PropType, type VNode, defineComponent } from 'vue'
-import { pick } from 'lodash-es'
 import type { SlotListenerTrigger, TriggerEventHandlers } from '/@/components/utils/DdtwSlotListener/types'
+import { pick } from 'lodash-es'
+import { defineComponent, type PropType, type VNode } from 'vue'
 import { getFirstSlotVNode } from '/@/utils/getFirstSlotNode'
 
 // inspired from https://github.com/TuSimple/naive-ui/blob/main/src/popover/src/Popover.tsx
@@ -40,8 +40,9 @@ function appendEvents(
 }
 
 export default defineComponent({
-  emits: ['click', 'focus', 'blur', 'mouseenter', 'mouseleave'],
   name: 'SlotListener',
+  // eslint-disable-next-line sort-keys/sort-keys-fix -- Keep the component name before emits as required by Vue option ordering.
+  emits: ['click', 'focus', 'blur', 'mouseenter', 'mouseleave'],
   // eslint-disable-next-line vue/order-in-components
   props: {
     trigger: {

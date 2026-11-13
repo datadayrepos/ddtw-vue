@@ -1,11 +1,11 @@
-import { type Ref, computed } from 'vue'
 import type {
+  avatarDotIndicatorPositionClasses,
   AvatarSize,
   AvatarStatus,
   AvatarStatusPosition,
   AvatarType,
-  avatarDotIndicatorPositionClasses,
 } from '/@/components/DdtwAvatar/types'
+import { computed, type Ref } from 'vue'
 import { useMergeClasses } from '/@/composables/useMergeClasses'
 
 const avatarSizeClasses: Record<AvatarSize, string> = {

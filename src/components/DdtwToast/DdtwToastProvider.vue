@@ -1,14 +1,14 @@
 <script lang="ts">
-import { useTimeoutFn } from '@vueuse/core'
-import { type PropType, TransitionGroup, defineComponent, h, provide, ref } from 'vue'
-import { FLOWBITE_TOAST_INJECTION_KEY } from './injection/config'
 import type {
   ToastItem,
   ToastItemWithId,
   ToastTransition,
   UseToastInjection,
 } from './types'
+import { useTimeoutFn } from '@vueuse/core'
+import { defineComponent, h, type PropType, provide, ref, TransitionGroup } from 'vue'
 import DdtwToast from './DdtwToast.vue'
+import { FLOWBITE_TOAST_INJECTION_KEY } from './injection/config'
 
 export default defineComponent({
   components: {
@@ -20,15 +20,24 @@ export default defineComponent({
       type: String as PropType<ToastTransition>,
     },
   },
-  setup () {
+  setup() {
     const toasts = ref<ToastItemWithId[]>([])
+
+    const removeToast = (id: string) => {
+      const index = toasts.value.findIndex(_ => _.id === id)
+      if (index >= 0) {
+        toasts.value.splice(index, 1)
+      }
+
+      return index >= 0
+    }
 
     const runRemoveTimeout = (id: string, ms: number) => {
       useTimeoutFn(() => removeToast(id), ms)
     }
 
     const addToast = (toast: ToastItem) => {
-      const id = parseInt((new Date().getTime() * Math.random()).toString()).toString()
+      const id = Number.parseInt((new Date().getTime() * Math.random()).toString()).toString()
       toasts.value.push({
         id,
         ...toast,
@@ -51,15 +60,6 @@ export default defineComponent({
       return lastId
     }
 
-    const removeToast = (id: string) => {
-      const index = toasts.value.findIndex((_) => _.id === id)
-      if (index >= 0) {
-        toasts.value.splice(index, 1)
-      }
-
-      return index >= 0
-    }
-
     provide<UseToastInjection>(FLOWBITE_TOAST_INJECTION_KEY, {
       add: addToast,
       pop: popToast,
@@ -67,11 +67,12 @@ export default defineComponent({
     })
 
     return {
-      toasts,
       removeToast,
+      toasts,
     }
   },
-  render () {
+  // eslint-disable-next-line sort-keys/sort-keys-fix -- Vue option order is checked by vue/order-in-components.
+  render() {
     const { $props, $slots, toasts, removeToast } = this
 
     return h('div', {}, [
@@ -79,9 +80,9 @@ export default defineComponent({
       h(
         TransitionGroup,
         {
+          class: 'xl:w-1/6 md:w-1/4 sm:w-1/4 fixed top-3 right-3 flex flex-col gap-2 z-50',
           name: $props.transition,
           tag: 'div',
-          class: 'xl:w-1/6 md:w-1/4 sm:w-1/4 fixed top-3 right-3 flex flex-col gap-2 z-50',
         },
         {
           default: () =>
@@ -91,24 +92,24 @@ export default defineComponent({
               ) =>
                 _toast.component
                   ? h(
-                    _toast.component,
-                    {
-                      key: _toast.id,
-                      onClose: () => removeToast(_toast.id),
-                      ...(_toast.componentProps ? _toast.componentProps : {}),
-                    },
-                    () => _toast.text,
-                  )
+                      _toast.component,
+                      {
+                        key: _toast.id,
+                        onClose: () => removeToast(_toast.id),
+                        ...(_toast.componentProps ? _toast.componentProps : {}),
+                      },
+                      () => _toast.text,
+                    )
                   : h(
-                    DdtwToast,
-                    {
-                      closable: true,
-                      type: _toast.type,
-                      key: _toast.id,
-                      onClose: () => removeToast(_toast.id),
-                    },
-                    () => _toast.text,
-                  ),
+                      DdtwToast,
+                      {
+                        closable: true,
+                        key: _toast.id,
+                        onClose: () => removeToast(_toast.id),
+                        type: _toast.type,
+                      },
+                      () => _toast.text,
+                    ),
             ),
         },
       ),

@@ -44,11 +44,11 @@
 </template>
 
 <script lang="ts" setup>
+import type { ButtonSize, ButtonVariant } from './types' // ButtonGradient, ButtonMonochromeGradient,
 import { computed, resolveComponent, toRefs } from 'vue'
 import DdtwSpinner from '../DdtwSpinner/DdtwSpinner.vue'
 import { useButtonClasses } from './composables/useButtonClasses'
 import { useButtonSpinner } from './composables/useButtonSpinner'
-import type { ButtonSize, ButtonVariant } from './types' // ButtonGradient, ButtonMonochromeGradient,
 import { useMergeClasses } from '/@/composables/useMergeClasses'
 
 type IButtonProps = {

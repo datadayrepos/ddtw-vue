@@ -1,6 +1,6 @@
-import { type Ref, computed } from 'vue'
 import type { ButtonSize, ButtonVariant } from '../types' // ButtonGradient,
 import type { SpinnerColor, SpinnerSize } from './../../DdtwSpinner/types'
+import { computed, type Ref } from 'vue'
 
 export type UseButtonSpinnerProps = {
   outline: Ref<boolean>

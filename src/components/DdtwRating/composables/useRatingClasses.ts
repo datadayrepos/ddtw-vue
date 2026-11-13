@@ -1,6 +1,6 @@
-import { type Ref, computed } from 'vue'
-import classNames from 'classnames'
 import type { RatingSize } from '../types'
+import classNames from 'classnames'
+import { computed, type Ref } from 'vue'
 
 const ratingSizeClasses: Record<RatingSize, string> = {
   lg: 'w-10 h-10',

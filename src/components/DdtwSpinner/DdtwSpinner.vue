@@ -18,9 +18,9 @@
 </template>
 
 <script lang="ts" setup>
+import type { SpinnerColor, SpinnerSize } from './types'
 import { toRefs } from 'vue'
 import { useSpinnerClasses } from './composables/useSpinnerClasses'
-import type { SpinnerColor, SpinnerSize } from './types'
 
 type ISpinnerProps = {
   color?: SpinnerColor

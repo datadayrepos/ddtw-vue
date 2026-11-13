@@ -137,9 +137,9 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
-import { twMerge } from 'tailwind-merge'
 import type { PaginationLayout } from './types'
+import { twMerge } from 'tailwind-merge'
+import { computed } from 'vue'
 
 const props = withDefaults(defineProps<IPaginationProps>(), {
   enableFirstAndLastButtons: false,
@@ -175,7 +175,6 @@ type IPaginationProps = {
 }
 
 defineSlots<{
-  /* eslint-disable @typescript-eslint/no-explicit-any */
   'start': any
   'first-button': any
   'prev-button': any
@@ -185,8 +184,14 @@ defineSlots<{
   'next-icon': any
   'last-button': any
   'end': any
-  /* eslint-enable @typescript-eslint/no-explicit-any */
 }>()
+
+const computedTotalPages = computed(() => {
+  if (props.totalPages)
+    return props.totalPages
+  return Math.ceil(props.totalItems / props.perPage)
+})
+
 function setPage(index: number) {
   emit('update:model-value', index)
   emit('page-changed', index)
@@ -208,12 +213,6 @@ function goToLastPage() {
   emit('update:model-value', lastPage)
   emit('page-changed', lastPage)
 }
-
-const computedTotalPages = computed(() => {
-  if (props.totalPages)
-    return props.totalPages
-  return Math.ceil(props.totalItems / props.perPage)
-})
 
 const isDecreaseDisabled = computed(() => props.modelValue <= 1)
 const isIncreaseDisabled = computed(() => props.modelValue >= computedTotalPages.value)

@@ -1,5 +1,5 @@
-import { type Ref, computed, inject, ref } from 'vue'
 import type { FlowbiteTheme } from '../types'
+import { computed, inject, type Ref, ref } from 'vue'
 import { DDTW_THEMABLE_INJECTION_KEY } from '../injection/config'
 
 type UseDdtwThemableReturns = {

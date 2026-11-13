@@ -14,3 +14,8 @@ inputs and publishes those exact verified bytes, without rebuilding. Repack afte
 source/build/manifest changes. Existing source checks are not waived by packing.
 A failed build or missing declared asset is a release blocker, not permission to
 publish a broader source payload. Git operations and releases stay human-owned.
+
+The ESM build externalizes declared peers and runtime JavaScript dependencies.
+Component styles and explicit dependency CSS are combined into the existing
+`dist/style.css` export. Declarations have no source-map references; bundled
+`node_modules` and maps remain blocked by the archive checks.

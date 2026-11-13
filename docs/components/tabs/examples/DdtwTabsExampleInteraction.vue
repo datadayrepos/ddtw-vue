@@ -41,6 +41,7 @@ import { DdtwTab, DdtwTabs } from '../../../../src/index'
 const activeTab = ref('first')
 
 function handlePaneClick() {
+  // eslint-disable-next-line no-console -- Demonstrate the published click:pane event in this example.
   console.log('Click!')
 }
 </script>

@@ -16,9 +16,9 @@
 </template>
 
 <script lang="ts" setup>
+import type { InputSize } from '/@/components/DdtwInput/types'
 import { computed, toRefs } from 'vue'
 import { useRangeClasses } from './composables/useRangeClasses'
-import type { InputSize } from '/@/components/DdtwInput/types'
 
 type RangeProps = {
   disabled?: boolean

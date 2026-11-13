@@ -45,9 +45,9 @@
 </template>
 
 <script lang="ts" setup>
+import type { ModalPosition, ModalSize } from '../../../../src/components/DdtwModal/types'
 import { ref } from 'vue'
 import { DdtwButton, DdtwModal } from '../../../../src/index'
-import type { ModalPosition, ModalSize } from '../../../../src/components/DdtwModal/types'
 
 type ModalProps = {
   size?: ModalSize

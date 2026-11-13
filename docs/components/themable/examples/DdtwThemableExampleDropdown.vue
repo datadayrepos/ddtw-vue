@@ -44,9 +44,9 @@
 </template>
 
 <script lang="ts" setup>
+import type { FlowbiteTheme } from '../../../../src/components/utils/DdtwThemable/types'
 import { ref } from 'vue'
 import { DdtwDropdown, DdtwRadio, DdtwThemable } from '../../../../src/index'
-import type { FlowbiteTheme } from '../../../../src/components/utils/DdtwThemable/types'
 
 const activeTheme = ref<FlowbiteTheme>('blue')
 </script>

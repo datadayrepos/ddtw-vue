@@ -1,7 +1,7 @@
-import { type Ref, computed } from 'vue'
+import type { TabsVariant } from './../types'
+import { computed, type Ref } from 'vue'
 import { simplifyTailwindClasses } from '../../../utils/simplifyTailwindClasses'
 import { useDdtwThemable } from '../../utils/DdtwThemable/composables/useDdtwThemable'
-import type { TabsVariant } from './../types'
 
 export type TabClassMap = {
   active: string

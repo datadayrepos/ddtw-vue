@@ -42,6 +42,20 @@ export default datadayrepos(
     ],
   },
 
+  // These exact event names are part of the published component API.
+  {
+    files: ['src/components/DdtwPagination/DdtwPagination.vue'],
+    rules: {
+      'vue/custom-event-name-casing': ['error', 'camelCase', { ignores: ['page-changed'] }],
+    },
+  },
+  {
+    files: ['src/components/DdtwTabs/DdtwTabs.vue'],
+    rules: {
+      'vue/custom-event-name-casing': ['error', 'camelCase', { ignores: ['click:pane'] }],
+    },
+  },
+
   {
     files: ['**/*.vue', '**/*.ts'], // Include both .vue and .ts files
     plugins: {

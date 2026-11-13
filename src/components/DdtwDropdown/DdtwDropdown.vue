@@ -44,9 +44,9 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref, toRef, watch } from 'vue'
-import { onClickOutside } from '@vueuse/core'
 import type { DropdownPlacement } from './types'
+import { onClickOutside } from '@vueuse/core'
+import { computed, ref, toRef, watch } from 'vue'
 import { useDropdownClasses } from './composables/useDropdownClasses'
 import DdtwButton from '/@/components/DdtwButton/DdtwButton.vue'
 import DdtwSlotListener from '/@/components/utils/DdtwSlotListener/DdtwSlotListener.vue'

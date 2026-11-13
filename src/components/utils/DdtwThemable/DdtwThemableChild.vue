@@ -8,9 +8,9 @@
 </template>
 
 <script lang="ts" setup>
-import { type PropType, computed, toRefs, useAttrs } from 'vue'
-import { useDdtwThemableChildClasses } from './composables/useDdtwThemableChildClasses'
 import type { FlowbiteTheme, ThemableChildrenApply } from '/@/components/utils/DdtwThemable/types'
+import { computed, type PropType, toRefs, useAttrs } from 'vue'
+import { useDdtwThemableChildClasses } from './composables/useDdtwThemableChildClasses'
 import { simplifyTailwindClasses } from '/@/utils/simplifyTailwindClasses'
 
 const props = defineProps({

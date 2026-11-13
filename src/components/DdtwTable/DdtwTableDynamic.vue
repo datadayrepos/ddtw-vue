@@ -70,13 +70,13 @@
 </template>
 
 <script lang="ts" setup>
+import type { ComponentCell, IconTextCell, ImageCell, ImageTextCell, TableCellType, TableRowType, TextCell } from './types'
 import { provide } from 'vue'
-import DdtwTableHead from './DdtwTableHead.vue'
 import DdtwTableBody from './DdtwTableBody.vue'
 import DdtwTableCell from './DdtwTableCell.vue'
+import DdtwTableHead from './DdtwTableHead.vue'
 import DdtwTableHeadCell from './DdtwTableHeadCell.vue'
 import DdtwTableRow from './DdtwTableRow.vue'
-import type { ComponentCell, IconTextCell, ImageCell, ImageTextCell, TableCellType, TableRowType, TextCell } from './types'
 
 const props = defineProps({
   dataRows: {

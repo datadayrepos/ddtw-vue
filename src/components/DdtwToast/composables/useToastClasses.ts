@@ -1,5 +1,5 @@
-import { type Ref, computed } from 'vue'
 import type { ToastAlign, ToastType } from '../types'
+import { computed, type Ref } from 'vue'
 import { simplifyTailwindClasses } from '/@/utils/simplifyTailwindClasses'
 
 type UseToastClassesReturns = {

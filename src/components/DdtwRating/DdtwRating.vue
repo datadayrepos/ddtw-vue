@@ -40,9 +40,9 @@
 </template>
 
 <script lang="ts" setup>
+import type { RatingSize } from './types'
 import { computed, toRefs } from 'vue'
 import { useRatingClasses } from './composables/useRatingClasses'
-import type { RatingSize } from './types'
 
 type IRatingProps = {
   rating?: number

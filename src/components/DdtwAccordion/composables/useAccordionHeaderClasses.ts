@@ -1,5 +1,5 @@
-import { type Ref, computed } from 'vue'
 import { twMerge } from 'tailwind-merge'
+import { computed, type Ref } from 'vue'
 import { useAccordionState } from './useAccordionState'
 
 const baseHeaderClasses = 'flex items-center p-5 w-full font-medium text-left border border-gray-200 dark:border-gray-700'

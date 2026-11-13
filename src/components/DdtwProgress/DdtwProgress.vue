@@ -31,9 +31,9 @@
 </template>
 
 <script lang="ts" setup>
+import type { ProgressLabelPosition, ProgressSize, ProgressVariant } from './types'
 import { toRefs } from 'vue'
 import { useProgressClasses } from './composables/useProgressClasses'
-import type { ProgressLabelPosition, ProgressSize, ProgressVariant } from './types'
 
 type IProgressProps = {
   color?: ProgressVariant

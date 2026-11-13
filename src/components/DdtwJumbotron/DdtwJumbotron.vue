@@ -21,9 +21,9 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, useAttrs } from 'vue'
-import { twMerge } from 'tailwind-merge'
 import type { HeaderLevel } from './types'
+import { twMerge } from 'tailwind-merge'
+import { computed, useAttrs } from 'vue'
 
 type IAlertProps = {
   headerLevel?: HeaderLevel
@@ -46,9 +46,7 @@ defineOptions({
 })
 
 defineSlots<{
-  /* eslint-disable @typescript-eslint/no-explicit-any */
   default: any
-  /* eslint-enable @typescript-eslint/no-explicit-any */
 }>()
 
 const attrs = useAttrs()

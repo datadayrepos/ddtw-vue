@@ -7,14 +7,14 @@
 </template>
 
 <script setup lang="ts">
-import { markRaw, ref } from 'vue'
+import type { TableRowType } from '../../../../src/components/DdtwTable/types' // Adjust the import path to your project structure
 import { CloseCircleOutlineIcon } from '@datadayrepos/icons'
+import { markRaw, ref } from 'vue'
 import {
   DdtwButton,
   DdtwInput,
   DdtwTableDynamic,
 } from '../../../../src/index'
-import type { TableRowType } from '../../../../src/components/DdtwTable/types' // Adjust the import path to your project structure
 
 // Define the headers for the table
 const headers = ref(['Fruit', 'Quantity', 'Price per Unit', 'Supplier'])
@@ -79,11 +79,15 @@ const allRows = ref<TableRowType[]>([
 
 // Function to handle table actions (this can be expanded based on your needs)
 function handleClick(e: any, p: any) {
+  // eslint-disable-next-line no-console -- Demonstrate the table event payload in this example.
   console.log('Table CLICK EVENT:', e)
+  // eslint-disable-next-line no-console -- Demonstrate the table event props in this example.
   console.log('Table CLICK PROPS:', p)
 }
 function handleUpdate(e: any, p: any) {
+  // eslint-disable-next-line no-console -- Demonstrate the table event payload in this example.
   console.log('Table UPDATE EVENT:', e)
+  // eslint-disable-next-line no-console -- Demonstrate the table event props in this example.
   console.log('Table UPDATE PROPS:', p)
 }
 </script>

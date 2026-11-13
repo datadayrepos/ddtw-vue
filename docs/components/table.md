@@ -37,14 +37,14 @@ This differs principally in that
 </template>
 
 <script setup lang="ts">
-import { markRaw, ref } from 'vue'
+import type { TableRowType } from '../../../../src/components/DdtwTable/types' // Adjust the import path to your project structure
 import { CloseCircleOutlineIcon } from '@datadayrepos/icons'
+import { markRaw, ref } from 'vue'
 import {
   DdtwButton,
   DdtwInput,
   DdtwTableDynamic,
 } from '../../../../src/index'
-import type { TableRowType } from '../../../../src/components/DdtwTable/types' // Adjust the import path to your project structure
 
 // Define the headers for the table
 const headers = ref(['Fruit', 'Quantity', 'Price per Unit', 'Supplier'])

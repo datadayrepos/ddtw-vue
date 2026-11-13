@@ -1,5 +1,5 @@
-import { type Ref, computed } from 'vue'
 import { twMerge } from 'tailwind-merge'
+import { computed, type Ref } from 'vue'
 import { useAccordionState } from './useAccordionState'
 
 const baseContentClasses = 'p-5 border border-gray-200 dark:border-gray-700 dark:bg-gray-900'

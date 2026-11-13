@@ -10,8 +10,8 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, useSlots } from 'vue'
 import type { BadgeSize, BadgeType } from './types'
+import { computed, useSlots } from 'vue'
 import { useBadgeClasses } from './composables/useBadgeClasses'
 
 type IBadgeProps = {

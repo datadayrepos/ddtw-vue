@@ -16,8 +16,8 @@
 
 <script lang="ts" setup>
 import type { PropType } from 'vue'
-import { DdtwButton, DdtwThemable } from '../../../../src/index'
 import type { FlowbiteTheme } from '../../../../src/components/utils/DdtwThemable/types'
+import { DdtwButton, DdtwThemable } from '../../../../src/index'
 
 defineProps({
   theme: {
