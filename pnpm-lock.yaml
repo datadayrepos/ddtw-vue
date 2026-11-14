@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@datadayrepos/icons':
-    specifier: 0.0.3
-    version: 0.0.3(vue@3.5.44)
+    specifier: 0.0.4
+    version: 0.0.4(vue@3.5.44)
   '@vueuse/core':
     specifier: 10.10.0
     version: 10.10.0(vue@3.5.44)
@@ -496,8 +496,8 @@ packages:
       sisteransi: 1.0.5
     dev: true
 
-  /@datadayrepos/icons@0.0.3(vue@3.5.44):
-    resolution: {integrity: sha512-PU6pJVfnFxgiGo4kLvezU2v/keOL6IdorduPw4hsrdA6I0zAN9PoJG7IBNKHD93Y5gQ420tdU9t9RW2qrhcQTA==}
+  /@datadayrepos/icons@0.0.4(vue@3.5.44):
+    resolution: {integrity: sha512-5XngbCfpSy7X1JEhcc340fsdWkc0CYvfo4ERdRBTNMajYLvJLrvIPfZ8y3YNkYLoi5+CYJebO4LeCOFOvXVVdw==}
     peerDependencies:
       vue: 3.5.44
     dependencies:
