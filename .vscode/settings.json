@@ -3,7 +3,7 @@
   "vite.browserType": "system",
   "vite.port": 5161,
   "vite.https": true,
-
+  "vite.autoStart": false,
   "typescript.tsdk": "node_modules/typescript/lib",
   // Enable the flat config support
   // "eslint.useFlatConfig": true,

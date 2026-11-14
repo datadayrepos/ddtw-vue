@@ -136,7 +136,7 @@ done < <(
       return scopes.some(scope => name.startsWith(scope));
     }
 
-    for (const depType of ["dependencies", "devDependencies"]) {
+    for (const depType of ["dependencies", "devDependencies","peerDependencies"]) {
       const deps = pkg[depType] || {};
       for (const [name, version] of Object.entries(deps)) {
         if (matches(name)) {

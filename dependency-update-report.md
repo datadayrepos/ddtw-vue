@@ -4,4 +4,5 @@
 
 | Package | Current | Latest | Selected |
 |---|---:|---:|---|
-| @datadayrepos/ni | 0.21.8 | 0.21.9 | yes |
+| @datadayrepos/ni | 0.21.10 | 0.21.10 | no-update |
+| @datadayrepos/icons | 0.0.2 | 0.0.2 | no-update |
