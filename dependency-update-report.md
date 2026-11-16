@@ -1,8 +1,7 @@
 # Dependency Update Report
 
-- File: `./package.json`
+Outcome: Selected updates applied; installation completed.
 
-| Package | Current | Latest | Selected |
-|---|---:|---:|---|
-| @datadayrepos/ni | 0.21.10 | 0.21.10 | no-update |
-| @datadayrepos/icons | 0.0.3 | 0.0.4 | yes |
+| Package | Field | Current declaration | Registry latest | Proposed declaration | Result | Detail |
+| --- | --- | --- | --- | --- | --- | --- |
+| @datadayrepos/icons | peerDependencies | 0.0.4 | 0.0.5 | 0.0.5 | applied; installation completed | Exact declaration remains exact. |
